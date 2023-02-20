@@ -125,7 +125,7 @@ export default function Menu({open, OnDrawerClose}: MenuProp) {
           </ListItem>
 
           <ListItem 
-            button activeClassName="Mui-selected" exact dfasdf
+            button activeClassName="Mui-selected" exact
             component={NewNavLink} to="/report">
             <ListItemIcon>
               <InboxIcon />

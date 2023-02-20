@@ -105,6 +105,13 @@ export default function Menu({open, OnDrawerClose}: MenuProp) {
         <Divider />
         <List>
 
+        <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Stock" />
+          </ListItem>
+
           <ListItem>
             <ListItemIcon>
               <InboxIcon />

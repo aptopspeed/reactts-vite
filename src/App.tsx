@@ -24,6 +24,8 @@ import { Link, Navigate, Route, RouteProps, Routes} from 'react-router-dom';
 
 import LoginPage from '@/components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage';
+import ReportPage from './components/pages/ReportPage';
+import AboutUs from './components/pages/AboutUs';
 
 const drawerWidth = 240;
 
@@ -96,6 +98,8 @@ export default function App() {
       <Main open={open}>
         <DrawerHeader />
           <Routes>
+            <Route path='/report' element={<ReportPage />} />
+            <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/' element={<Navigate to="/login" />} />

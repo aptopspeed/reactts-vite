@@ -18,9 +18,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import LayersIcon from '@mui/icons-material/Layers';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import PersonIcon from '@mui/icons-material/Person';
 import { NavLink } from 'react-router-dom';
+import { Stack } from '@mui/material';
 
 const drawerWidth = 240;
+
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -110,16 +115,20 @@ export default function Menu({open, OnDrawerClose}: MenuProp) {
         open={open}
       >
         <DrawerHeader>
+          <Stack direction="row" alignItems= "center">
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
+          </Stack>
         </DrawerHeader>
         <Divider />
         <List>
 
-        <ListItem>
+        <ListItem
+          button activeClassName="Mui-selected" exact
+          component={NewNavLink} to="/stock">
             <ListItemIcon>
-              <InboxIcon />
+              <LayersIcon />
             </ListItemIcon>
             <ListItemText primary="Stock" />
           </ListItem>
@@ -128,7 +137,7 @@ export default function Menu({open, OnDrawerClose}: MenuProp) {
             button activeClassName="Mui-selected" exact
             component={NewNavLink} to="/report">
             <ListItemIcon>
-              <InboxIcon />
+              <BarChartIcon />
             </ListItemIcon>
             <ListItemText primary="Report" />
           </ListItem>
@@ -137,23 +146,10 @@ export default function Menu({open, OnDrawerClose}: MenuProp) {
             button activeClassName="Mui-selected" exact
             component={NewNavLink} to="/aboutus" >
             <ListItemIcon>
-              <MailIcon />
+              <PersonIcon />
             </ListItemIcon>
             <ListItemText primary="AboutUs" />
           </ListItem>
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
         </List>
       </Drawer>
   );

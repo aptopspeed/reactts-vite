@@ -27,6 +27,8 @@ import RegisterPage from './components/pages/RegisterPage';
 import ReportPage from './components/pages/ReportPage';
 import AboutUs from './components/pages/AboutUs';
 import StockPage from './components/pages/StockPage';
+import imagePath from '@/assets/react.svg';
+
 
 const drawerWidth = 240;
 
@@ -54,7 +56,7 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundImage: "url(" + `${process.env.PUBLIC_URL}/images/background_menu.jpg` + ")",
+          backgroundImage: `url(${imagePath})`,
           width: drawerWidth,
         },
       },

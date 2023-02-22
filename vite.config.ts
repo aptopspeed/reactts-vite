@@ -7,9 +7,9 @@ export default defineConfig({
   server: {port : 3000},
   plugins: [react()],
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    alias: [{
+      find: '@',
+      replacement: path.resolve(__dirname, 'src')
+    }],
   },
-  define: {
-    "process.env.PUBLIC_URL" : `${process.env.PUBLIC_URL}`
-  }
 })

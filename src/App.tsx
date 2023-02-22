@@ -57,6 +57,8 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           backgroundImage: `url(${imagePath})`,
+          // would use env public folder without process.env by follow this comment
+          // backgroundImage: "url(" + `/images/react.svg` + ")",
           width: drawerWidth,
         },
       },
